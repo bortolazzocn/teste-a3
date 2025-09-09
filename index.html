@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fichas de Imóveis</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+body {
+background-color: #f9fafb;
+color: #1f2937;
+line-height: 1.5;
+}
+.min-h-screen {
+min-height: 100vh;
+}
+.bg-gray-50 {
+background-color: #f9fafb;
+}
+.bg-white {
+background-color: #ffffff;
+}
+.bg-blue-600 {
+background-color: #2563eb;
+}
+.bg-gray-100 {
+background-color: #f3f4f6;
+}
+.bg-gray-200 {
+background-color: #e5e7eb;
+}
+.bg-blue-100 {
+background-color: #dbeafe;
+}
+.bg-red-100 {
+background-color: #fee2e2;
+}
+.bg-red-500 {
+background-color: #ef4444;
+}
+.bg-green-600 {
+background-color: #16a34a;
+}
+.text-white {
+color: #ffffff;
+}
+.text-gray-600 {
+color: #4b5563;
+}
+.text-gray-700 {
+color: #374151;
+}
+.text-gray-800 {
+color: #1f2937;
+}
+.text-blue-600 {
+color: #2563eb;
+}
+.text-blue-800 {
+color: #1d4ed8;
+}
+.text-red-600 {
+color: #dc2626;
+}
+.text-sm {
+font-size: 0.875rem;
+}
+.text-lg {
+font-size: 1.125rem;
+}
+.text-xl {
+font-size: 1.25rem;
+}
+.text-2xl {
+font-size: 1.5rem;
+}
+.font-bold {
+font-weight: 700;
+}
+.font-semibold {
+font-weight: 600;
+}
+.font-medium {
+font-weight: 500;
+}
+.shadow-sm {
+box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.shadow-md {
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.rounded-lg {
+border-radius: 0.5rem;
+}
+.rounded-xl {
+border-radius: 0.75rem;
+}
+.rounded-full {
+border-radius: 9999px;
+}
+.border {
+border-width: 1px;
+}
+.border-b {
+border-bottom-width: 1px;
+}
+.border-gray-300 {
+border-color: #d1d5db;
+}
+.border-transparent {
+border-color: transparent;
+}
+.border-dashed {
+border-style: dashed;
+}
+.p-2 {
+padding: 0.5rem;
+}
+.p-3 {
+padding: 0.75rem;
+}
+.p-4 {
+padding: 1rem;
+}
+.p-6 {
+padding: 1.5rem;
+}
+.p-8 {
+padding: 2rem;
+}
+.px-3 {
+padding-left: 0.75rem;
+padding-right: 0.75rem;
+}
+.px-4 {
+padding-left: 1rem;
+padding-right: 1rem;
+}
+.py-1 {
+padding-top: 0.25rem;
+padding-bottom: 0.25rem;
+}
+.py-2 {
+padding-top: 0.5rem;
+padding-bottom: 0.5rem;
+}
+.py-3 {
+padding-top: 0.75rem;
+padding-bottom: 0.75rem;
+}
+.py-4 {
+padding-top: 1rem;
+padding-bottom: 1rem;
+}
+.py-6 {
+padding-top: 1.5rem;
+padding-bottom: 1.5rem;
+}
+.py-8 {
+padding-top: 2rem;
+padding-bottom: 2rem;
+}
+.py-12 {
+padding-top: 3rem;
+padding-bottom: 3rem;
+}
+.mb-2 {
+margin-bottom: 0.5rem;
+}
+.mb-3 {
+margin-bottom: 0.75rem;
+}
+.mb-4 {
+margin-bottom: 1rem;
+}
+.mb-6 {
+margin-bottom: 1.5rem;
+}
+.mb-8 {
+margin-bottom: 2rem;
+}
+.mt-4 {
+margin-top: 1rem;
+}
+.mt-6 {
+margin-top: 1.5rem;
+}
+.mr-1 {
+margin-right: 0.25rem;
+}
+.mr-2 {
+margin-right: 0.5rem;
+}
+.gap-2 {
+gap: 0.5rem;
+}
+.gap-4 {
+gap: 1rem;
+}
+.gap-6 {
+gap: 1.5rem;
+}
+.w-full {
+width: 100%;
+}
+.w-6 {
+width: 1.5rem;
+}
+.w-24 {
+width: 6rem;
+}
+.h-6 {
+height: 1.5rem;
+}
+.h-24 {
+height: 6rem;
+}
+.h-32 {
+height: 8rem;
+}
+.h-48 {
+height: 12rem;
+}
+.h-64 {
+height: 16rem;
+}
+.h-96 {
+height: 24rem;
+}
+.flex {
+display: flex;
+}
+.inline-flex {
+display: inline-flex;
+}
+.grid {
+display: grid;
+}
+.grid-cols-2 {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-cols-3 {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.grid-cols-4 {
+grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.flex-col {
+flex-direction: column;
+}
+.flex-wrap {
+flex-wrap: wrap;
+}
+.items-center {
+align-items: center;
+}
+.justify-center {
+justify-content: center;
+}
+.justify-between {
+justify-content: space-between;
+}
+.relative {
+position: relative;
+}
+.absolute {
+position: absolute;
+}
+.top-4 {
+top: 1rem;
+}
+.top-6 {
+top: 1.5rem;
+}
+.right-4 {
+right: 1rem;
+}
+.right-6 {
+right: 1.5rem;
+}
+.-top-2 {
+top: -0.5rem;
+}
+.-right-2 {
+right: -0.5rem;
+}
+.left-0 {
+left: 0;
+}
+.right-0 {
+right: 0;
+}
+.bottom-0 {
+bottom: 0;
+}
+.top-0 {
+top: 0;
+}
+.overflow-hidden {
+overflow: hidden;
+}
+.object-cover {
+object-fit: cover;
+}
+.focus\:ring-2:focus {
+box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+.focus\:ring-blue-500:focus {
+box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+}
+.focus\:border-transparent:focus {
+border-color: transparent;
+}
+.hover\:bg-blue-700:hover {
+background-color: #1d4ed8;
+}
+.hover\:bg-gray-200:hover {
+background-color: #e5e7eb;
+}
+.hover\:bg-gray-300:hover {
+background-color: #d1d5db;
+}
+.hover\:bg-gray-50:hover {
+background-color: #f9fafb;
+}
+.hover\:bg-red-600:hover {
+background-color: #dc2626;
+}
+.hover\:bg-green-700:hover {
+background-color: #15803d;
+}
+.hover\:text-blue-800:hover {
+color: #1d4ed8;
+}
+.hover\:text-gray-800:hover {
+color: #1f2937;
+}
+.max-w-4xl {
+max-width: 56rem;
+}
+.mx-auto {
+margin-left: auto;
+margin-right: auto;
+}
+.leading-relaxed {
+line-height: 1.625;
+}
+.hidden {
+display: none;
+}
+@media (min-width: 768px) {
+.md\:grid-cols-2 {
+grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.md\:grid-cols-3 {
+grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.md\:grid-cols-4 {
+grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.md\:h-48 {
+height: 12rem;
+}
+.md\:h-96 {
+height: 24rem;
+}
+}
+/* Estilos adicionais para melhorar o visual */
+.btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+white-space: nowrap;
+border-radius: 0.5rem;
+font-size: 0.875rem;
+font-weight: 500;
+transition: all 0.15s ease-in-out;
+cursor: pointer;
+border: none;
+}
+.btn-icon {
+width: 1.25rem;
+height: 1.25rem;
+margin-right: 0.5rem;
+}
+.card {
+background-color: #fff;
+border-radius: 0.75rem;
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+overflow: hidden;
+transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover {
+transform: translateY(-2px);
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+.form-input {
+width: 100%;
+padding: 0.75rem 1rem;
+border: 1px solid #d1d5db;
+border-radius: 0.5rem;
+font-size: 0.875rem;
+transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.form-input:focus {
+outline: none;
+border-color: #3b82f6;
+box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+.feature-tag {
+display: inline-flex;
+align-items: center;
+background-color: #dbeafe;
+color: #1d4ed8;
+padding: 0.25rem 0.75rem;
+border-radius: 9999px;
+font-size: 0.875rem;
+font-weight: 500;
+}
+.feature-tag button {
+background: none;
+border: none;
+color: #1d4ed8;
+margin-left: 0.5rem;
+cursor: pointer;
+font-size: 1rem;
+line-height: 1;
+}
+.feature-tag button:hover {
+color: #1e40af;
+}
+.image-upload-btn {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 100%;
+padding: 1.5rem;
+border: 2px dashed #d1d5db;
+border-radius: 0.5rem;
+background-color: #f9fafb;
+cursor: pointer;
+transition: background-color 0.15s ease-in-out;
+}
+.image-upload-btn:hover {
+background-color: #f3f4f6;
+}
+.image-preview {
+position: relative;
+border-radius: 0.5rem;
+overflow: hidden;
+}
+.image-preview img {
+width: 100%;
+height: 6rem;
+object-fit: cover;
+}
+.image-preview button {
+position: absolute;
+top: -0.5rem;
+right: -0.5rem;
+width: 1.5rem;
+height: 1.5rem;
+border-radius: 9999px;
+background-color: #ef4444;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition: background-color 0.15s ease-in-out;
+}
+.image-preview button:hover {
+background-color: #dc2626;
+}
+.property-detail-icon {
+width: 2rem;
+height: 2rem;
+margin: 0 auto 0.5rem;
+color: #2563eb;
+}
+.property-detail-value {
+font-size: 1.5rem;
+font-weight: 700;
+margin-bottom: 0.25rem;
+}
+.property-detail-label {
+font-size: 0.875rem;
+color: #6b7280;
+}
+.empty-state {
+text-align: center;
+padding: 3rem 1rem;
+}
+.empty-state-icon {
+width: 4rem;
+height: 4rem;
+margin: 0 auto 1rem;
+color: #9ca3af;
+}
+/* Estilos específicos para a ficha do imóvel no celular */
+.property-sheet {
+background-color: #fff;
+border-radius: 1rem 1rem 0 0;
+overflow: hidden;
+box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+max-width: 100%;
+margin: 0 auto;
+}
+.property-sheet-header {
+position: sticky;
+top: 0;
+background-color: #fff;
+z-index: 10;
+padding: 1rem;
+border-bottom: 1px solid #f3f4f6;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+.property-sheet-title {
+font-size: 1.25rem;
+font-weight: 700;
+color: #1f2937;
+}
+.property-sheet-close {
+width: 2rem;
+height: 2rem;
+border-radius: 50%;
+background-color: #f3f4f6;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+}
+.property-sheet-gallery {
+position: relative;
+overflow: hidden;
+}
+.property-sheet-carousel {
+position: relative;
+width: 100%;
+height: 60vw;
+max-height: 70vh;
+overflow: hidden;
+}
+.property-sheet-image-container {
+display: flex;
+transition: transform 0.5s ease;
+height: 100%;
+}
+.property-sheet-image {
+min-width: 100%;
+height: 100%;
+object-fit: cover;
+}
+.property-sheet-price {
+position: absolute;
+bottom: 1rem;
+right: 1rem;
+background-color: #2563eb;
+color: white;
+padding: 0.5rem 1rem;
+border-radius: 2rem;
+font-weight: 700;
+font-size: 1.125rem;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+z-index: 5;
+}
+.property-sheet-nav {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 1rem;
+pointer-events: none;
+}
+.property-sheet-nav-btn {
+width: 2.5rem;
+height: 2.5rem;
+border-radius: 50%;
+background-color: rgba(0, 0, 0, 0.3);
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+pointer-events: all;
+transition: background-color 0.2s;
+border: none;
+outline: none;
+box-shadow: none;
+}
+.property-sheet-nav-btn:hover {
+background-color: rgba(0, 0, 0, 0.5);
+}
+.property-sheet-nav-btn:focus {
+outline: none;
+box-shadow: none;
+}
+.property-sheet-dots {
+position: absolute;
+bottom: 1rem;
+left: 0;
+right: 0;
+display: flex;
+justify-content: center;
+gap: 0.5rem;
+z-index: 5;
+}
+.property-sheet-dot {
+width: 0.5rem;
+height: 0.5rem;
+border-radius: 50%;
+background-color: rgba(255, 255, 255, 0.5);
+cursor: pointer;
+transition: background-color 0.2s, width 0.2s;
+}
+.property-sheet-dot.active {
+width: 1.5rem;
+border-radius: 0.25rem;
+background-color: white;
+}
+.property-sheet-content {
+padding: 1.5rem;
+}
+.property-sheet-property-title {
+font-size: 1.5rem;
+font-weight: 700;
+margin-bottom: 0.5rem;
+color: #1f2937;
+}
+.property-sheet-address {
+display: flex;
+align-items: center;
+color: #6b7280;
+margin-bottom: 1.5rem;
+}
+.property-sheet-details {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 1rem;
+margin-bottom: 1.5rem;
+}
+.property-sheet-detail {
+text-align: center;
+padding: 1rem;
+background-color: #f9fafb;
+border-radius: 0.5rem;
+}
+.property-sheet-detail-icon {
+width: 1.75rem;
+height: 1.75rem;
+margin: 0 auto 0.5rem;
+color: #2563eb;
+}
+.property-sheet-detail-value {
+font-size: 1.25rem;
+font-weight: 700;
+margin-bottom: 0.25rem;
+}
+.property-sheet-detail-label {
+font-size: 0.75rem;
+color: #6b7280;
+}
+.property-sheet-section {
+margin-bottom: 1.5rem;
+}
+.property-sheet-section-title {
+font-size: 1.125rem;
+font-weight: 600;
+margin-bottom: 0.75rem;
+color: #1f2937;
+}
+.property-sheet-description {
+color: #4b5563;
+line-height: 1.6;
+}
+.property-sheet-features {
+display: flex;
+flex-wrap: wrap;
+gap: 0.5rem;
+}
+.property-sheet-feature {
+background-color: #dbeafe;
+color: #1d4ed8;
+padding: 0.5rem 1rem;
+border-radius: 2rem;
+font-size: 0.875rem;
+font-weight: 500;
+}
+.property-sheet-actions {
+display: flex;
+flex-direction: column;
+gap: 0.75rem;
+margin-top: 1rem;
+}
+.property-sheet-action {
+width: 100%;
+padding: 0.875rem;
+border-radius: 0.5rem;
+font-weight: 600;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+transition: background-color 0.2s;
+border: none;
+}
+.property-sheet-action-icon {
+margin-right: 0.5rem;
+}
+.property-sheet-action-primary {
+background-color: #16a34a;
+color: white;
+}
+.property-sheet-action-primary:hover {
+background-color: #15803d;
+}
+.property-sheet-action-secondary {
+background-color: #2563eb;
+color: white;
+padding: 0.75rem;
+max-width: 60%;
+margin: 0 auto;
+}
+.property-sheet-action-secondary:hover {
+background-color: #1d4ed8;
+}
+.property-sheet-thumbnails {
+display: flex;
+gap: 0.5rem;
+padding: 0 1.5rem;
+overflow-x: auto;
+margin-bottom: 1rem;
+-webkit-overflow-scrolling: touch;
+scrollbar-width: none; /* Firefox */
+}
+.property-sheet-thumbnails::-webkit-scrollbar {
+display: none; /* Chrome, Safari, Edge */
+}
+.property-sheet-thumbnail {
+flex-shrink: 0;
+width: 5rem;
+height: 5rem;
+border-radius: 0.5rem;
+overflow: hidden;
+opacity: 0.7;
+transition: opacity 0.2s;
+}
+.property-sheet-thumbnail.active {
+opacity: 1;
+border: 2px solid #2563eb;
+}
+.property-sheet-thumbnail img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+@media (min-width: 768px) {
+.property-sheet-details {
+grid-template-columns: repeat(4, 1fr);
+}
+}
+@media (max-width: 767px) {
+.property-sheet-details {
+grid-template-columns: repeat(2, 1fr);
+}
+.property-sheet-gallery {
+height: 60vw;
+}
+}
+</style>
+</head>
+<body>
+<div id="app">
+<!-- Lista de Imóveis -->
+<div id="list-view" class="min-h-screen bg-gray-50">
+<header class="bg-white shadow-sm border-b">
+<div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+<h1 class="text-2xl font-bold text-gray-800">Meus Imóveis</h1>
+<button id="new-property-btn" class="btn bg-blue-600 text-white px-4 py-2 hover:bg-blue-700">
+<i class="fas fa-plus btn-icon"></i>
+Novo Imóvel
+</button>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 py-8">
+<div id="empty-state" class="empty-state hidden">
+<div class="empty-state-icon">
+<i class="fas fa-camera fa-3x"></i>
+</div>
+<h3 class="text-xl font-medium text-gray-600 mb-2">Nenhum imóvel cadastrado</h3>
+<p class="text-gray-500 mb-6">Comece criando sua primeira ficha de imóvel</p>
+<button id="create-first-property-btn" class="btn bg-blue-600 text-white px-6 py-3 hover:bg-blue-700">
+Cadastrar Primeiro Imóvel
+</button>
+</div>
+<div id="properties-grid" class="grid gap-6 md:grid-cols-2">
+<!-- Os imóveis serão inseridos aqui via JavaScript -->
+</div>
+</main>
+</div>
+<!-- Formulário de Criação -->
+<div id="create-view" class="min-h-screen bg-gray-50 hidden">
+<header class="bg-white shadow-sm border-b">
+<div class="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+<h1 class="text-2xl font-bold text-gray-800">Novo Imóvel</h1>
+<button id="back-to-list-btn" class="text-gray-600 hover:text-gray-800">
+Voltar
+</button>
+</div>
+</header>
+<main class="max-w-4xl mx-auto px-4 py-8">
+<div class="bg-white rounded-xl shadow-md p-6">
+<div class="grid gap-6">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">
+Título do Imóvel *
+</label>
+<input
+type="text"
+id="form-title"
+class="form-input"
+placeholder="Ex: Apartamento 3 dormitórios - Vila Madalena"
+/>
+</div>
+<div class="grid md:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">
+Preço *
+</label>
+<input
+type="text"
+id="form-price"
+class="form-input"
+placeholder="R$ 850.000"
+/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">
+Área (m²)
+</label>
+<input
+type="number"
+id="form-area"
+class="form-input"
+placeholder="95"
+/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">
+Endereço
+</label>
+<input
+type="text"
+id="form-address"
+class="form-input"
+placeholder="Rua Harmonia, 123 - Vila Madalena, São Paulo"
+/>
+</div>
+<div class="grid grid-cols-3 gap-4">
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">
+Dormitórios
+</label>
+<input
+type="number"
+id="form-bedrooms"
+class="form-input"
+placeholder="3"
+/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">
+Banheiros
+</label>
+<input
+type="number"
+id="form-bathrooms"
+class="form-input"
+placeholder="2"
+/>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">
+Vagas
+</label>
+<input
+type="number"
+id="form-parking"
+class="form-input"
+placeholder="1"
+/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">
+Descrição
+</label>
+<textarea
+id="form-description"
+rows="4"
+class="form-input"
+placeholder="Descreva as características do imóvel..."
+></textarea>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">
+Características
+</label>
+<div class="flex gap-2 mb-2">
+<input
+type="text"
+id="form-new-feature"
+class="form-input flex-1"
+placeholder="Ex: Varanda, Piscina, Portaria 24h..."
+/>
+<button
+id="add-feature-btn"
+class="btn bg-blue-600 text-white px-4 py-2 hover:bg-blue-700"
+>
+<i class="fas fa-plus"></i>
+</button>
+</div>
+<div id="features-list" class="flex flex-wrap gap-2">
+<!-- As características serão inseridas aqui via JavaScript -->
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">
+Fotos
+</label>
+<button
+id="add-image-btn"
+class="image-upload-btn"
+>
+<i class="fas fa-camera text-2xl text-gray-400 mb-2"></i>
+<span class="text-gray-600">Adicionar Foto (URL)</span>
+</button>
+<div id="images-grid" class="grid grid-cols-2 md:grid-cols-3 gap-4 mt-4">
+<!-- As imagens serão inseridas aqui via JavaScript -->
+</div>
+</div>
+<div class="flex gap-4 pt-6 border-t">
+<button
+id="cancel-btn"
+class="btn flex-1 bg-gray-200 text-gray-800 py-3 hover:bg-gray-300"
+>
+Cancelar
+</button>
+<button
+id="save-property-btn"
+class="btn flex-1 bg-blue-600 text-white py-3 hover:bg-blue-700"
+>
+Salvar Imóvel
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Visualização da Ficha do Imóvel (Versão Mobile) -->
+<div id="view-view" class="min-h-screen bg-gray-50 hidden">
+<div class="property-sheet">
+<div class="property-sheet-header">
+<div class="property-sheet-title">Ficha do Imóvel</div>
+<div class="property-sheet-close" onclick="showListView()">
+<i class="fas fa-times"></i>
+</div>
+</div>
+<div class="property-sheet-gallery">
+<div class="property-sheet-carousel">
+<div id="property-image-container" class="property-sheet-image-container">
+<!-- As imagens serão inseridas aqui via JavaScript -->
+</div>
+<div id="property-price-badge" class="property-sheet-price"></div>
+<div class="property-sheet-nav">
+<button id="prev-btn" class="property-sheet-nav-btn">
+<i class="fas fa-chevron-left"></i>
+</button>
+<button id="next-btn" class="property-sheet-nav-btn">
+<i class="fas fa-chevron-right"></i>
+</button>
+</div>
+<div id="property-dots" class="property-sheet-dots">
+<!-- Os indicadores serão inseridos aqui via JavaScript -->
+</div>
+</div>
+</div>
+<div id="property-thumbnails" class="property-sheet-thumbnails">
+<!-- As miniaturas serão inseridas aqui via JavaScript -->
+</div>
+<div class="property-sheet-content">
+<h1 id="property-title" class="property-sheet-property-title"></h1>
+<div id="property-address" class="property-sheet-address hidden">
+<i class="fas fa-map-marker-alt mr-2"></i>
+<span></span>
+</div>
+<div id="property-details" class="property-sheet-details">
+<!-- Os detalhes serão inseridos aqui via JavaScript -->
+</div>
+<div id="property-description" class="property-sheet-section hidden">
+<h3 class="property-sheet-section-title">Descrição</h3>
+<p class="property-sheet-description"></p>
+</div>
+<div id="property-features" class="property-sheet-section hidden">
+<h3 class="property-sheet-section-title">Características</h3>
+<div class="property-sheet-features">
+<!-- As características serão inseridas aqui via JavaScript -->
+</div>
+</div>
+<div class="property-sheet-actions">
+<button class="property-sheet-action property-sheet-action-primary">
+<i class="fas fa-comment property-sheet-action-icon"></i>
+Tenho Interesse
+</button>
+<button id="share-from-view-btn" class="property-sheet-action property-sheet-action-secondary">
+<i class="fas fa-share property-sheet-action-icon"></i>
+Compartilhar
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+// Estado da aplicação
+let currentView = 'list'; // 'list', 'create', 'view'
+let selectedProperty = null;
+let currentImageIndex = 0;
+let autoSlideInterval = null;
+let properties = [
+{
+id: 1,
+title: 'Apartamento 3 Dormitórios - Vila Madalena',
+price: 'R$ 850.000',
+address: 'Rua Harmonia, 123 - Vila Madalena, São Paulo',
+bedrooms: 3,
+bathrooms: 2,
+area: 95,
+parking: 1,
+description: 'Lindo apartamento reformado com vista para área verde. Cozinha americana, varanda gourmet e acabamentos de primeira linha.',
+features: ['Varanda', 'Área de Lazer', 'Portaria 24h', 'Elevador'],
+images: [
+'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800',
+'https://images.unsplash.com/photo-1565623833408-d77e39b88af6?w=800',
+'https://images.unsplash.com/photo-1562663474-6cbb3eaa4d14?w=800'
+],
+createdAt: '2024-09-01'
+},
+{
+id: 2,
+title: 'Casa 4 Dormitórios - Alto da Boa Vista',
+price: 'R$ 1.200.000',
+address: 'Rua das Flores, 456 - Alto da Boa Vista, São Paulo',
+bedrooms: 4,
+bathrooms: 3,
+area: 180,
+parking: 2,
+description: 'Casa espaçosa com quintal amplo, ideal para famílias. Localização privilegiada em bairro nobre.',
+features: ['Quintal', 'Churrasqueira', 'Piscina', 'Garagem Coberta'],
+images: [
+'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800',
+'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800'
+],
+createdAt: '2024-08-28'
+}
+];
+let formData = {
+title: '',
+price: '',
+address: '',
+bedrooms: '',
+bathrooms: '',
+area: '',
+parking: '',
+description: '',
+features: [],
+images: []
+};
+// Funções de navegação
+function showListView() {
+document.getElementById('list-view').classList.remove('hidden');
+document.getElementById('create-view').classList.add('hidden');
+document.getElementById('view-view').classList.add('hidden');
+currentView = 'list';
+renderPropertyList();
+stopAutoSlide();
+}
+function showCreateView() {
+document.getElementById('list-view').classList.add('hidden');
+document.getElementById('create-view').classList.remove('hidden');
+document.getElementById('view-view').classList.add('hidden');
+currentView = 'create';
+resetForm();
+stopAutoSlide();
+}
+function showView(propertyId) {
+selectedProperty = properties.find(p => p.id === propertyId);
+document.getElementById('list-view').classList.add('hidden');
+document.getElementById('create-view').classList.add('hidden');
+document.getElementById('view-view').classList.remove('hidden');
+currentView = 'view';
+currentImageIndex = 0;
+renderPropertyView();
+startAutoSlide();
+}
+// Funções do carrossel de imagens
+function startAutoSlide() {
+if (selectedProperty && selectedProperty.images.length > 1) {
+stopAutoSlide();
+autoSlideInterval = setInterval(() => {
+nextImage();
+}, 4000); // Muda a imagem a cada 4 segundos
+}
+}
+function stopAutoSlide() {
+if (autoSlideInterval) {
+clearInterval(autoSlideInterval);
+autoSlideInterval = null;
+}
+}
+function nextImage() {
+if (!selectedProperty || selectedProperty.images.length <= 1) return;
+currentImageIndex = (currentImageIndex + 1) % selectedProperty.images.length;
+updateCarousel();
+}
+function prevImage() {
+if (!selectedProperty || selectedProperty.images.length <= 1) return;
+currentImageIndex = (currentImageIndex - 1 + selectedProperty.images.length) % selectedProperty.images.length;
+updateCarousel();
+}
+function goToImage(index) {
+if (!selectedProperty || selectedProperty.images.length <= 1) return;
+currentImageIndex = index;
+updateCarousel();
+restartAutoSlide();
+}
+function updateCarousel() {
+if (!selectedProperty) return;
+// Atualizar o container de imagens
+const container = document.getElementById('property-image-container');
+container.style.transform = `translateX(-${currentImageIndex * 100}%)`;
+// Atualizar os indicadores (dots)
+const dots = document.querySelectorAll('.property-sheet-dot');
+dots.forEach((dot, index) => {
+if (index === currentImageIndex) {
+dot.classList.add('active');
+} else {
+dot.classList.remove('active');
+}
+});
+// Atualizar as miniaturas
+const thumbnails = document.querySelectorAll('.property-sheet-thumbnail');
+thumbnails.forEach((thumbnail, index) => {
+if (index === currentImageIndex) {
+thumbnail.classList.add('active');
+} else {
+thumbnail.classList.remove('active');
+}
+});
+}
+function restartAutoSlide() {
+stopAutoSlide();
+startAutoSlide();
+}
+// Renderização da lista de imóveis
+function renderPropertyList() {
+const emptyState = document.getElementById('empty-state');
+const propertiesGrid = document.getElementById('properties-grid');
+if (properties.length === 0) {
+emptyState.classList.remove('hidden');
+propertiesGrid.innerHTML = '';
+return;
+}
+emptyState.classList.add('hidden');
+propertiesGrid.innerHTML = properties.map(property => `
+<div class="card">
+<div class="relative">
+<img
+src="${property.images[0] || 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800'}"
+alt="${property.title}"
+class="w-full h-48 object-cover"
+/>
+<div class="absolute top-4 right-4">
+<span class="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+${property.price}
+</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-semibold text-lg text-gray-800 mb-2">${property.title}</h3>
+<p class="text-gray-600 text-sm mb-4 flex items-center">
+<i class="fas fa-map-marker-alt mr-1"></i>
+${property.address}
+</p>
+<div class="flex gap-4 text-sm text-gray-600 mb-4">
+${property.bedrooms ? `
+<span class="flex items-center">
+<i class="fas fa-bed mr-1"></i>
+${property.bedrooms}
+</span>
+` : ''}
+${property.bathrooms ? `
+<span class="flex items-center">
+<i class="fas fa-bath mr-1"></i>
+${property.bathrooms}
+</span>
+` : ''}
+${property.area ? `
+<span class="flex items-center">
+<i class="fas fa-square mr-1"></i>
+${property.area}m²
+</span>
+` : ''}
+${property.parking ? `
+<span class="flex items-center">
+<i class="fas fa-car mr-1"></i>
+${property.parking}
+</span>
+` : ''}
+</div>
+<div class="flex gap-2">
+<button
+onclick="showView(${property.id})"
+class="btn flex-1 bg-gray-100 text-gray-700 px-4 py-2 hover:bg-gray-200"
+>
+<i class="fas fa-eye btn-icon"></i>
+Ver Ficha
+</button>
+<button
+onclick="shareProperty(${property.id})"
+class="btn flex-1 bg-blue-600 text-white px-4 py-2 hover:bg-blue-700"
+>
+<i class="fas fa-share btn-icon"></i>
+Compartilhar
+</button>
+<button
+onclick="deleteProperty(${property.id})"
+class="btn bg-red-100 text-red-600 px-3 py-2 hover:bg-red-200"
+>
+<i class="fas fa-trash"></i>
+</button>
+</div>
+</div>
+</div>
+`).join('');
+}
+// Renderização da visualização do imóvel (versão mobile)
+function renderPropertyView() {
+if (!selectedProperty) return;
+// Preencher título
+document.getElementById('property-title').textContent = selectedProperty.title;
+// Preencher preço
+document.getElementById('property-price-badge').textContent = selectedProperty.price;
+// Preencher carrossel de imagens
+const container = document.getElementById('property-image-container');
+container.innerHTML = '';
+if (selectedProperty.images.length > 0) {
+selectedProperty.images.forEach(image => {
+const img = document.createElement('img');
+img.src = image;
+img.alt = selectedProperty.title;
+img.className = 'property-sheet-image';
+container.appendChild(img);
+});
+// Adicionar indicadores (dots)
+const dotsContainer = document.getElementById('property-dots');
+dotsContainer.innerHTML = '';
+selectedProperty.images.forEach((_, index) => {
+const dot = document.createElement('div');
+dot.className = 'property-sheet-dot';
+if (index === 0) dot.classList.add('active');
+dot.addEventListener('click', () => goToImage(index));
+dotsContainer.appendChild(dot);
+});
+// Adicionar miniaturas
+const thumbnailsContainer = document.getElementById('property-thumbnails');
+thumbnailsContainer.innerHTML = '';
+selectedProperty.images.forEach((image, index) => {
+const thumbnail = document.createElement('div');
+thumbnail.className = 'property-sheet-thumbnail';
+if (index === 0) thumbnail.classList.add('active');
+const img = document.createElement('img');
+img.src = image;
+img.alt = `Miniatura ${index + 1}`;
+img.addEventListener('click', () => goToImage(index));
+thumbnail.appendChild(img);
+thumbnailsContainer.appendChild(thumbnail);
+});
+// Configurar botões de navegação
+document.getElementById('prev-btn').addEventListener('click', () => {
+prevImage();
+restartAutoSlide();
+});
+document.getElementById('next-btn').addEventListener('click', () => {
+nextImage();
+restartAutoSlide();
+});
+} else {
+// Se não há imagens, mostrar uma imagem padrão
+const img = document.createElement('img');
+img.src = 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800';
+img.alt = selectedProperty.title;
+img.className = 'property-sheet-image';
+container.appendChild(img);
+// Limpar indicadores e miniaturas
+document.getElementById('property-dots').innerHTML = '';
+document.getElementById('property-thumbnails').innerHTML = '';
+}
+// Preencher endereço
+const addressElement = document.getElementById('property-address');
+if (selectedProperty.address) {
+addressElement.classList.remove('hidden');
+addressElement.querySelector('span').textContent = selectedProperty.address;
+} else {
+addressElement.classList.add('hidden');
+}
+// Preencher detalhes
+const detailsElement = document.getElementById('property-details');
+detailsElement.innerHTML = '';
+if (selectedProperty.bedrooms) {
+detailsElement.innerHTML += `
+<div class="property-sheet-detail">
+<i class="fas fa-bed property-sheet-detail-icon"></i>
+<div class="property-sheet-detail-value">${selectedProperty.bedrooms}</div>
+<div class="property-sheet-detail-label">Dormitórios</div>
+</div>
+`;
+}
+if (selectedProperty.bathrooms) {
+detailsElement.innerHTML += `
+<div class="property-sheet-detail">
+<i class="fas fa-bath property-sheet-detail-icon"></i>
+<div class="property-sheet-detail-value">${selectedProperty.bathrooms}</div>
+<div class="property-sheet-detail-label">Banheiros</div>
+</div>
+`;
+}
+if (selectedProperty.area) {
+detailsElement.innerHTML += `
+<div class="property-sheet-detail">
+<i class="fas fa-square property-sheet-detail-icon"></i>
+<div class="property-sheet-detail-value">${selectedProperty.area}</div>
+<div class="property-sheet-detail-label">m²</div>
+</div>
+`;
+}
+if (selectedProperty.parking) {
+detailsElement.innerHTML += `
+<div class="property-sheet-detail">
+<i class="fas fa-car property-sheet-detail-icon"></i>
+<div class="property-sheet-detail-value">${selectedProperty.parking}</div>
+<div class="property-sheet-detail-label">Vagas</div>
+</div>
+`;
+}
+// Preencher descrição
+const descriptionElement = document.getElementById('property-description');
+if (selectedProperty.description) {
+descriptionElement.classList.remove('hidden');
+descriptionElement.querySelector('p').textContent = selectedProperty.description;
+} else {
+descriptionElement.classList.add('hidden');
+}
+// Preencher características
+const featuresElement = document.getElementById('property-features');
+if (selectedProperty.features.length > 0) {
+featuresElement.classList.remove('hidden');
+featuresElement.querySelector('.property-sheet-features').innerHTML = selectedProperty.features.map(feature => `
+<span class="property-sheet-feature">${feature}</span>
+`).join('');
+} else {
+featuresElement.classList.add('hidden');
+}
+}
+// Funções do formulário
+function resetForm() {
+formData = {
+title: '',
+price: '',
+address: '',
+bedrooms: '',
+bathrooms: '',
+area: '',
+parking: '',
+description: '',
+features: [],
+images: []
+};
+// Limpar campos do formulário
+document.getElementById('form-title').value = '';
+document.getElementById('form-price').value = '';
+document.getElementById('form-address').value = '';
+document.getElementById('form-bedrooms').value = '';
+document.getElementById('form-bathrooms').value = '';
+document.getElementById('form-area').value = '';
+document.getElementById('form-parking').value = '';
+document.getElementById('form-description').value = '';
+document.getElementById('form-new-feature').value = '';
+// Limpar listas
+document.getElementById('features-list').innerHTML = '';
+document.getElementById('images-grid').innerHTML = '';
+}
+function addFeature() {
+const input = document.getElementById('form-new-feature');
+const feature = input.value.trim();
+if (feature) {
+formData.features.push(feature);
+input.value = '';
+renderFeatures();
+}
+}
+function removeFeature(index) {
+formData.features.splice(index, 1);
+renderFeatures();
+}
+function renderFeatures() {
+const featuresList = document.getElementById('features-list');
+featuresList.innerHTML = formData.features.map((feature, index) => `
+<span class="feature-tag">
+${feature}
+<button
+onclick="removeFeature(${index})"
+>
+×
+</button>
+</span>
+`).join('');
+}
+function addImage() {
+const url = prompt('Digite a URL da imagem:');
+if (url) {
+formData.images.push(url);
+renderImages();
+}
+}
+function removeImage(index) {
+formData.images.splice(index, 1);
+renderImages();
+}
+function renderImages() {
+const imagesGrid = document.getElementById('images-grid');
+imagesGrid.innerHTML = formData.images.map((image, index) => `
+<div class="image-preview">
+<img
+src="${image}"
+alt="Foto ${index + 1}"
+/>
+<button
+onclick="removeImage(${index})"
+>
+×
+</button>
+</div>
+`).join('');
+}
+function saveProperty() {
+// Coletar dados do formulário
+formData.title = document.getElementById('form-title').value;
+formData.price = document.getElementById('form-price').value;
+formData.address = document.getElementById('form-address').value;
+formData.bedrooms = document.getElementById('form-bedrooms').value;
+formData.bathrooms = document.getElementById('form-bathrooms').value;
+formData.area = document.getElementById('form-area').value;
+formData.parking = document.getElementById('form-parking').value;
+formData.description = document.getElementById('form-description').value;
+// Validar campos obrigatórios
+if (!formData.title || !formData.price) {
+alert('Preencha pelo menos o título e o preço');
+return;
+}
+// Adicionar imóvel
+const newProperty = {
+...formData,
+id: Date.now(),
+createdAt: new Date().toISOString().split('T')[0]
+};
+properties.unshift(newProperty);
+showListView();
+}
+function deleteProperty(id) {
+if (window.confirm('Tem certeza que deseja excluir este imóvel?')) {
+properties = properties.filter(p => p.id !== id);
+renderPropertyList();
+}
+}
+// Função modificada para gerar URLs únicas
+function shareProperty(id) {
+const property = id ? properties.find(p => p.id === id) : selectedProperty;
+const baseUrl = window.location.origin + window.location.pathname;
+const uniqueUrl = `${baseUrl}#imovel/${property.id}`;
+    
+if (navigator.clipboard) {
+navigator.clipboard.writeText(uniqueUrl).then(() => {
+alert('Link copiado para a área de transferência!');
+}).catch(() => {
+alert(`Compartilhe este link: ${uniqueUrl}`);
+});
+} else {
+alert(`Compartilhe este link: ${uniqueUrl}`);
+}
+}
+
+// Função para detectar o hash na URL e exibir o imóvel correspondente
+function checkUrlHash() {
+const hash = window.location.hash.substring(1); // Remove o #
+    
+if (hash.startsWith('imovel/')) {
+const propertyId = parseInt(hash.split('/')[1]);
+if (!isNaN(propertyId)) {
+const property = properties.find(p => p.id === propertyId);
+if (property) {
+showView(propertyId);
+return;
+}
+}
+}
+    
+// Se não houver hash ou for inválido, mostra a lista
+showListView();
+}
+
+// Event listeners
+document.addEventListener('DOMContentLoaded', function() {
+// Verificar o hash ao carregar a página
+checkUrlHash();
+    
+// Navegação
+document.getElementById('new-property-btn').addEventListener('click', showCreateView);
+document.getElementById('create-first-property-btn').addEventListener('click', showCreateView);
+document.getElementById('back-to-list-btn').addEventListener('click', showListView);
+    
+// Formulário
+document.getElementById('add-feature-btn').addEventListener('click', addFeature);
+document.getElementById('add-image-btn').addEventListener('click', addImage);
+document.getElementById('cancel-btn').addEventListener('click', showListView);
+document.getElementById('save-property-btn').addEventListener('click', saveProperty);
+    
+// Compartilhamento
+document.getElementById('share-from-view-btn').addEventListener('click', () => shareProperty());
+    
+// Adicionar característica com Enter
+document.getElementById('form-new-feature').addEventListener('keypress', function(e) {
+if (e.key === 'Enter') {
+addFeature();
+}
+});
+    
+// Adicionar listener para mudanças no hash
+window.addEventListener('hashchange', checkUrlHash);
+});
+</script>
+</body>
+</html>
